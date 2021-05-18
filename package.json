@@ -1,0 +1,22 @@
+{
+  "name": "readme-gen",
+  "version": "1.0.0",
+  "description": "this app helps generate a readme file for your repo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrianShearer/Readme-gen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrianShearer/Readme-gen/issues"
+  },
+  "homepage": "https://github.com/BrianShearer/Readme-gen#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
