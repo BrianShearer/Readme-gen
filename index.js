@@ -1,3 +1,20 @@
+// from starter file 
+// TODO: Include packages needed for this application
+
+// TODO: Create an array of questions for user input
+// const questions = [];
+
+// TODO: Create a function to write README file
+// function writeToFile(fileName, data) {}
+
+// TODO: Create a function to initialize app
+// function init() {}
+
+// Function call to initialize app
+// init();
+
+
+
 const inquirer = require("inquirer");
 const fs = require('fs');
 const generateMarkdown = require('./generatemarkdown')
@@ -61,9 +78,10 @@ Add a New Project
                     }
                 }
             },
+            
             {
                 type: 'input',
-                name: 'installationInstructions',
+                name: 'installation',
                 message: 'installation instructions',
                 validate: installationInput_1 => {
                     if (installationInput_1) {
@@ -76,18 +94,43 @@ Add a New Project
             },
             {
                 type: 'input',
-                name: 'usageInformation',
+                name: 'usage',
                 message: 'usage information',
+                validate: installationInput_1 => {
+                    if (installationInput_1) {
+                        return true;
+                    } else {
+                        console.log('You need to enter a Installation instructions!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'input',
-                name: 'contributionGuidlines',
+                name: 'contribution',
                 message: 'contribution guidelines',
+                validate: installationInput_1 => {
+                    if (installationInput_1) {
+                        return true;
+                    } else {
+                        console.log('You need to enter a Installation instructions!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'input',
-                name: 'testInstructions',
-                message: 'test instructions'
+                name: 'test',
+                message: 'test instructions',
+                validate: installationInput_1 => {
+                    if (installationInput_1) {
+                        return true;
+                    } else {
+                        console.log('You need to enter a Installation instructions!');
+                        return false;
+                    }
+                }
+                
             },
             {
                 type: 'input',
@@ -116,7 +159,20 @@ Add a New Project
                 }
             },
             
-        ])
+        ]).then(( {
+            title,
+            instalation,
+            instructions,
+            credits,
+            license,
+            git,
+            email,
+            usage,
+            contribution
+         }) =>{
+            //  template to be used
+            const template = 
+         }
         
         
         
