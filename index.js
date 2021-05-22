@@ -1,8 +1,30 @@
+// from starter file 
+
+
+
+
+// TODO: Create a function to write README file
+// function writeToFile(fileName, data) {}
+
+// TODO: Create a function to initialize app
+// function init() {}
+
+// Function call to initialize app
+// init();
+
+
+// TODO: Include packages needed for this application
+
 const inquirer = require("inquirer");
 const fs = require('fs');
 const generateMarkdown = require('./generatemarkdown')
 
+
+
+
 // TODO: Create a function to write README file
+
+
 function writeToFile(data) {
    fs.writeFile('output/README.md',generateMarkdown(data), (err) => {
         if (err) throw err;
@@ -19,14 +41,17 @@ function writeToFile(data) {
 
 
 
+// TODO: Create an array of questions for user input
+// const questions = []
 
+xxxxxxx
 
 const readmeGen = () => {
-    console.log(`
-=================
-Add a New Project
-=================
-`);
+//     console.log(`
+// =================
+// Add a New Project
+// =================
+// `);
 
 // if (!portfolioData.projects) {
 //     portfolioData.projects = [];
@@ -61,9 +86,10 @@ Add a New Project
                     }
                 }
             },
+            
             {
                 type: 'input',
-                name: 'installationInstructions',
+                name: 'installation',
                 message: 'installation instructions',
                 validate: installationInput_1 => {
                     if (installationInput_1) {
@@ -76,18 +102,43 @@ Add a New Project
             },
             {
                 type: 'input',
-                name: 'usageInformation',
+                name: 'usage',
                 message: 'usage information',
+                validate: usageInput_1 => {
+                    if (usageInput_1) {
+                        return true;
+                    } else {
+                        console.log('You need to enter a Installation instructions!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'input',
-                name: 'contributionGuidlines',
+                name: 'contribution',
                 message: 'contribution guidelines',
+                validate: contributionInput_1 => {
+                    if (contributionInput_1) {
+                        return true;
+                    } else {
+                        console.log('You need to enter a Installation instructions!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'input',
-                name: 'testInstructions',
-                message: 'test instructions'
+                name: 'test',
+                message: 'test instructions',
+                validate: testInput_1 => {
+                    if (testInput_1) {
+                        return true;
+                    } else {
+                        console.log('You need to enter a Installation instructions!');
+                        return false;
+                    }
+                }
+                
             },
             {
                 type: 'input',
@@ -124,4 +175,6 @@ Add a New Project
         
     };
 
-    readmeGen().then(answers => console.log(answers))
+    readmeGen().then(answers => console.log(answers));
+
+    
